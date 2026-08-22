@@ -1,0 +1,19 @@
+Configuration file->
+	Configuration files store key-value Pairs.
+	Used for Centralized configuration
+	
+BASE CLASS
+	Backbone of Framework
+	Setup and teardown logic
+	Common Functionalitites:
+		Initilaizes WebDriver
+		Browser Initalization and termimation
+		Loading config
+		Managing wait times
+Action Driver class
+	Encapsulation of Selenium Acitons
+	Enhances stability with Explicit waits
+	Imporoved error handling
+
+Page Object Model
+	
