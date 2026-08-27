@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.orangehrm.actiondriver.ActionDriver;
+import com.orangehrm.base.BaseClass;
 
 public class LoginPage {
 
@@ -15,11 +16,15 @@ public class LoginPage {
 	private By passwordField = By.cssSelector("input[type='password']");
 	private By loginButton = By.xpath("//button[text()=' Login ']");
 	private By errorMessage = By.xpath("//p[text()='Invalid credentials']");
-	
-	public LoginPage(WebDriver driver) {
-		this.actionDriver= new ActionDriver(driver);
-	}
 
+	/*
+	 * public LoginPage(WebDriver driver) { this.actionDriver= new
+	 * ActionDriver(driver); }
+	 */
+
+	public LoginPage(WebDriver driver) {
+		this.actionDriver=BaseClass.getActionDriver();
+	}
 	// Method to perform Login
 	public void login(String userName, String password) {
 		actionDriver.enterText(userNameField, userName);
@@ -27,20 +32,20 @@ public class LoginPage {
 		actionDriver.click(loginButton);
 
 	}
-	
-	//Method to check if error message is displayed
+
+	// Method to check if error message is displayed
 	public boolean isErrorMessageDisplayed() {
 		return actionDriver.isDisplayed(errorMessage);
 	}
-	
-	//Method to get the text from error message
+
+	// Method to get the text from error message
 	public String getErrorMessageText() {
 		return actionDriver.getText(errorMessage);
 	}
-	
-	//verify if error is correct or not
-	public void verifyErrorMessage(String expectedError) {
-		actionDriver.compareText(errorMessage, expectedError);
+
+	// verify if error is correct or not
+	public boolean verifyErrorMessage(String expectedError) {
+		return actionDriver.compareText(errorMessage, expectedError);
 	}
 
 }

@@ -19,6 +19,7 @@ public class ActionDriver {
 		this.driver = driver;
 		int explicitWait = Integer.parseInt(BaseClass.getProp().getProperty("explicitWait"));
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(explicitWait));
+		System.out.println("WebDriver Instance is created");
 	}
 
 	// Method to click element
@@ -41,13 +42,15 @@ public class ActionDriver {
 		return driver.findElement(by).getText();
 	}
 
-	// Method to compare Two text
-	public void compareText(By by, String expectedText) {
+	// Method to compare Two text --change return type
+	public boolean compareText(By by, String expectedText) {
 		waitForElementToBeVisibile(by);
 		String actualText = driver.findElement(by).getText();
 		if (expectedText.equals(actualText)) {
 			System.out.println("Text are Matching: " + actualText + " equals " + expectedText);
+			return true;
 		}
+		return false;
 	}
 
 	// wait for element to be clickable

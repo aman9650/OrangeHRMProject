@@ -16,4 +16,24 @@ Action Driver class
 	Imporoved error handling
 
 Page Object Model
+
+SInglton Design Pattern
+			-The Singleton design pattern ensures that a 
+			class has only one instance and provides a global access point to it.
+			-Implementation in Selenium (Java)
+				A standard implementation uses a private constructor, 
+				a static instance variable, and 
+				a public static method to retrieve or initialize the driver.
+				
+Loggin->
+	Apache Log4j 2 is a widely used Java-based logging framework in test automation and 
+	backend development. It replaces standard System.out.println() statements with structured, 
+	timestamped logs routed to both the console and persistent log files.
 	
+Level Usage in Automation Logging
+TRACE->Fine-grained, step-by-step element coordinates and raw HTTP payloads
+DEBUG->Diagnostic details (e.g., extracted locator strings, dynamic wait timings)
+INFO->High-level milestones (e.g., test started, browser launched, page loaded)
+WARN->Non-breaking issues (e.g., deprecated method calls, slow response times)
+ERROR->Assertion failures, missing elements, or runtime exceptions
+FATAL->Critical aborts (e.g., environment down, database connection unavailable)
