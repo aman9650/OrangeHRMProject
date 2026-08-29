@@ -16,6 +16,8 @@ import org.testng.annotations.BeforeSuite;
 import com.orangehrm.actiondriver.ActionDriver;
 import com.orangehrm.utilities.LoggerManager;
 
+import jdk.internal.org.jline.utils.Log;
+
 public class BaseClass {
 
 	protected static Properties prop;
@@ -72,7 +74,7 @@ public class BaseClass {
 		try {
 			driver.get(prop.getProperty("url"));
 		} catch (Exception e) {
-			System.out.println("Failed to Navigate");
+			Log.info("Failed to Navigate");
 		}
 	}
 
@@ -87,7 +89,7 @@ public class BaseClass {
 	//Getter Method for webDriver
 	public static WebDriver getDriver() {
 		if(driver ==null) {
-			System.out.println("WebDriver is not initialized");
+			Log.info("WebDriver is not initialized");
 			throw new IllegalStateException("WebDriver is not initialized");
 		}
 		return driver;

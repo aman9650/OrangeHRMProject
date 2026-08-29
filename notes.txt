@@ -37,3 +37,8 @@ INFO->High-level milestones (e.g., test started, browser launched, page loaded)
 WARN->Non-breaking issues (e.g., deprecated method calls, slow response times)
 ERROR->Assertion failures, missing elements, or runtime exceptions
 FATAL->Critical aborts (e.g., environment down, database connection unavailable)
+
+GetElementDescription() method for better logging
+A getElementDescription() utility extracts identifiable DOM attributes 
+(id, name, aria-label, visible text, or locator details) from a WebElement at runtime. 
+Instead of printing vague logs or unreadable Selenium internal hashe
